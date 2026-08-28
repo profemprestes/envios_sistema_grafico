@@ -1,5 +1,5 @@
-﻿// Nueva versión rediseñada de HomeScreen para Stitch Design System
-// Eliminando fondos negros y Canvas Dark Brand Ink (#00277C), favoreciendo superficies blancas, Brand Blue 700 y acentos en Brand Yellow 500.
+﻿// Rediseño de HomeScreen para Stitch Design System
+// Sin Canvas Dark Brand Ink (#00277C), colores de marca luminosos y acentos en Brand Yellow 500.
 
 const REDESIGN_SERVICES = [
   { 
@@ -52,27 +52,33 @@ const REDESIGN_SERVICES = [
   },
 ];
 
+const REDESIGN_REVIEWS = [
+  { tag: "Encargo especial", title: "Mi héroe logístico por segundo año consecutivo", text: "Un encargo especial: comprar alfajores de temporada en MDQ, embalarlos con mimo y enviármelos para viajar a Europa. Rapidez, comunicación clara y calidez humana.", name: "Sol R", meta: "Local Guide" },
+  { tag: "Resolución inmediata", title: "Resolvieron mi problema con la mejor predisposición", text: "Excelente el servicio, rápidos, muy atentos, resolvieron mi problema con la mejor predisposición, los recomiendo ampliamente.", name: "Karen Herrera", meta: "Google Maps" },
+  { tag: "Tiendas y comercios", title: "Impecable para llevar pedidos a nuestros clientes", text: "Lo usé varias veces para llevar pedidos a nuestros clientes. Impecable el servicio. Además hacen depósitos en cajeros sin problemas.", name: "Agustin Torres", meta: "Google Maps" },
+  { tag: "Seguridad y rapidez", title: "Atención de primera, rápido, confiable y seguro", text: "Excelente servicio, atención de primera, rápido, confiable y seguro. Recomendado 100% para envíos puntuales.", name: "Lorenzo Elizagoyen", meta: "Google Maps" },
+];
+
+const REDESIGN_INDUSTRIES = [
+  { title: "E-Commerce y Tiendas Online", badge: "SLA en el día", desc: "Retiro programado en tu depósito y entrega directa al cliente con tracking por WhatsApp y rendición de cobros contrareembolso en el acto.", bullets: ["Rendición de dinero en el acto", "Soporte exclusivo post-venta", "Cero cancelaciones de Flex"], img: "card_heroe_nueva.jpeg" },
+  { title: "Repuestos y Autopartes", badge: "Despacho Urgente", desc: "Entregas inmediatas para talleres y casas de repuestos en toda la ciudad. Traslado seguro de componentes mecánicos.", bullets: ["Respuesta en menos de 15 min", "Manipulación de paquetes pesados", "Rutas directas sin escalas"], img: "card_moto01.webp" },
+  { title: "Indumentaria y Moda", badge: "Cuidado Total", desc: "Packaging impecable para prendas y calzado con cambios y devoluciones coordinados a domicilio.", bullets: ["Cambios en mano coordinados", "Embalaje protegido contra lluvia", "Tarifas diferenciadas por volumen"], img: "box_card.jpeg" },
+  { title: "Farmacia e Insumos Médicos", badge: "Prioridad Crítica", desc: "Traslado prioritario de medicamentos, muestras y recetas con máxima trazabilidad y puntualidad.", bullets: ["Custodia dedicada", "Monitoreo en tiempo real", "Cadetes certificados"], img: "card_mapa.webp" }
+];
+
 export function HomeScreenRedesign({ go }) {
-  const nav = (p) => (e) => { e.preventDefault(); go(p); };
+  const nav = (p) => (e) => { e.preventDefault(); if (go) go(p); };
   const [sent, setSent] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(0);
-
-  const industries = [
-    { title: "E-Commerce y Tiendas Online", badge: "SLA en el día", desc: "Retiro programado en tu depósito y entrega directa al cliente con tracking por WhatsApp y rendición de cobros contrareembolso en el acto.", bullets: ["Rendición de dinero en el acto", "Soporte exclusivo post-venta", "Cero cancelaciones de Flex"], img: "card_heroe_nueva.jpeg" },
-    { title: "Repuestos y Autopartes", badge: "Despacho Urgente", desc: "Entregas inmediatas para talleres y casas de repuestos en toda la ciudad. Traslado seguro de componentes mecánicos.", bullets: ["Respuesta en menos de 15 min", "Manipulación de paquetes pesados", "Rutas directas sin escalas"], img: "card_moto01.webp" },
-    { title: "Indumentaria y Moda", badge: "Cuidado Total", desc: "Packaging impecable para prendas y calzado con cambios y devoluciones coordinados a domicilio.", bullets: ["Cambios en mano coordinados", "Embalaje protegido contra lluvia", "Tarifas diferenciadas por volumen"], img: "box_card.jpeg" },
-    { title: "Farmacia e Insumos Médicos", badge: "Prioridad Crítica", desc: "Traslado prioritario de medicamentos, muestras y recetas con máxima trazabilidad y puntualidad.", bullets: ["Custodia dedicada", "Monitoreo en tiempo real", "Cadetes certificados"], img: "card_mapa.webp" }
-  ];
 
   return (
     <div className="bg-white text-brand-blue-700">
       
-      {/* 1. HERO REDISEÑADO: Estructura Asimétrica, Tipografía Display con imagen inline */}
+      {/* 1. HERO REDISEÑADO */}
       <section className="relative overflow-hidden bg-white border-b border-brand-blue-100 py-16 sm:py-24">
         <Container className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
             
-            {/* Status Live Badge */}
             <div className="inline-flex items-center gap-2 bg-brand-blue-50 border border-brand-blue-200 px-4 py-2 rounded-full mb-6">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-yellow-500 opacity-75"></span>
@@ -83,7 +89,6 @@ export function HomeScreenRedesign({ go }) {
               </span>
             </div>
 
-            {/* Headline con jerarquía de peso e imágenes inline */}
             <h1 className="font-display uppercase leading-[0.9] text-5xl sm:text-6xl lg:text-7xl text-brand-blue-700">
               Tu logística <span className="text-brand-blue-500">urbana</span> más veloz y <span className="bg-brand-yellow-500 text-brand-blue-700 px-2 rounded-lg inline-block">segura</span>
             </h1>
@@ -97,7 +102,6 @@ export function HomeScreenRedesign({ go }) {
               <Cta variant="outline" href="#/servicios/envios-express" onClick={nav("/servicios/envios-express")}>Ver Tarifas y Servicios</Cta>
             </div>
 
-            {/* Quick Metrics Bar */}
             <div className="mt-12 pt-8 border-t border-brand-blue-100 grid grid-cols-3 gap-6">
               <div>
                 <p className="font-mono text-3xl font-bold text-brand-blue-700">30-90m</p>
@@ -114,7 +118,6 @@ export function HomeScreenRedesign({ go }) {
             </div>
           </div>
 
-          {/* Hero Column Derecha: Double Bezel Card Luminosa con mapa & foto */}
           <div className="lg:col-span-5">
             <div className="rounded-3xl bg-brand-blue-50 border border-brand-blue-200 p-4 shadow-float">
               <div className="rounded-2xl bg-white border border-brand-blue-100 overflow-hidden relative">
@@ -136,7 +139,7 @@ export function HomeScreenRedesign({ go }) {
         </Container>
       </section>
 
-      {/* 2. SERVICIOS REDISEÑADOS: Asymmetric Grid con tarjetas de alto impacto */}
+      {/* 2. SERVICIOS REDISEÑADOS */}
       <section className="py-20 bg-brand-white-50">
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -189,34 +192,32 @@ export function HomeScreenRedesign({ go }) {
         </Container>
       </section>
 
-      {/* 3. INDUSTRIAS INTERACTIVAS (TABS & ASYMMETRIC SHOWCASE) */}
+      {/* 3. INDUSTRIAS INTERACTIVAS */}
       <section className="py-20 bg-white">
         <Container>
           <SectionHead pill="Sectores Especializados" title="Logística a la medida de tu rubro" text="Configuramos rutas dinámicas y cadetería capacitada para los requerimientos específicos de cada negocio." />
 
-          {/* Industry Tabs */}
           <div className="flex flex-wrap gap-2 mb-8 border-b border-brand-blue-100 pb-4">
-            {industries.map((ind, idx) => (
+            {REDESIGN_INDUSTRIES.map((ind, idx) => (
               <button key={ind.title} onClick={() => setActiveTab(idx)} className={"px-5 py-2.5 rounded-full font-subheading uppercase tracking-widest text-sm transition-all " + (activeTab === idx ? "bg-brand-blue-700 text-brand-yellow-500 font-bold shadow-minimal" : "bg-brand-blue-50 text-brand-blue-700 hover:bg-brand-blue-100")}>
                 {ind.title.split(" ")[0]}
               </button>
             ))}
           </div>
 
-          {/* Tab Content Box */}
           <div className="rounded-3xl bg-brand-blue-50 border border-brand-blue-200 p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
               <span className="px-3.5 py-1.5 rounded-full bg-brand-blue-700 text-brand-yellow-500 font-subheading uppercase text-xs tracking-widest font-bold">
-                {industries[activeTab].badge}
+                {REDESIGN_INDUSTRIES[activeTab].badge}
               </span>
               <h3 className="font-display uppercase text-3xl sm:text-4xl text-brand-blue-700 mt-4 leading-tight">
-                {industries[activeTab].title}
+                {REDESIGN_INDUSTRIES[activeTab].title}
               </h3>
               <p className="mt-4 text-brand-blue-600 leading-relaxed text-base">
-                {industries[activeTab].desc}
+                {REDESIGN_INDUSTRIES[activeTab].desc}
               </p>
               <ul className="mt-6 space-y-3">
-                {industries[activeTab].bullets.map((b) => (
+                {REDESIGN_INDUSTRIES[activeTab].bullets.map((b) => (
                   <li key={b} className="flex items-center gap-3 text-brand-blue-700 font-medium text-sm">
                     <span className="w-5 h-5 rounded-full bg-brand-yellow-500 text-brand-blue-700 flex items-center justify-center font-bold text-xs">✓</span>
                     {b}
@@ -229,7 +230,7 @@ export function HomeScreenRedesign({ go }) {
             </div>
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-white border border-brand-blue-200 shadow-minimal">
-                <img src={IMG + industries[activeTab].img} alt={industries[activeTab].title} className="w-full h-full object-cover" />
+                <img src={IMG + REDESIGN_INDUSTRIES[activeTab].img} alt={REDESIGN_INDUSTRIES[activeTab].title} className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -257,7 +258,7 @@ export function HomeScreenRedesign({ go }) {
             </div>
 
             <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {HOME_REVIEWS.slice(0, 4).map((r) => (
+              {REDESIGN_REVIEWS.map((r) => (
                 <div key={r.name} className="p-6 rounded-3xl bg-white border border-brand-blue-100 shadow-minimal flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-center mb-3">
@@ -283,7 +284,7 @@ export function HomeScreenRedesign({ go }) {
         </Container>
       </section>
 
-      {/* 5. CTA SECTION LUMINOSA (Brand Blue 700 & Yellow 500) */}
+      {/* 5. CTA SECTION LUMINOSA */}
       <section className="py-20 bg-brand-blue-700 text-white relative overflow-hidden">
         <Container className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
