@@ -1,0 +1,5 @@
+/* EnviosDosRuedas_Oficial - styles entry. Everything a design needs is reachable from here. */
+@import "./tokens/theme.css";
+@import "./fonts/fonts.css";
+@import "./tokens/fonts.css";
+@import "./_ds_bundle.css";

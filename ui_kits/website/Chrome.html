@@ -1,0 +1,17 @@
+<!-- @dsCard group="Website" viewport="1440x900" name="Cascarón (header, redes, footer)" subtitle="Navbar con menús, franja «Seguí nuestro movimiento» y footer del sitio" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><title>Cascarón (header, redes, footer) · Envíos DosRuedas</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>body{margin:0;background:#fff}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>// Babel standalone (preset es2015) compila 'export function' a CommonJS: este objeto recibe esos exports. Los globals reales los publica cada archivo con Object.assign(window, ...).
+var exports = {};</script>
+</head><body class="bg-white text-brand-ink font-sans"><div id="root"></div>
+<script type="text/babel" src="Chrome.jsx"></script>
+<script type="text/babel">
+// Preview de Cascarón (header, redes, footer). Los enlaces navegan al kit completo (index.html) con la ruta elegida.
+const go = (p) => { location.href = "index.html#" + p; };
+ReactDOM.createRoot(document.getElementById("root")).render(<Chrome path="/" go={go}><section className="py-16 sm:py-20 lg:py-24 bg-white"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h1 className="font-display uppercase leading-[0.9] text-4xl sm:text-5xl text-brand-ink">Contenido de la página</h1><p className="mt-4 text-lg text-brand-blue-600 max-w-xl">Cualquier pantalla del kit se renderiza dentro de este cascarón: header sticky, franja global de redes y footer.</p></div></section></Chrome>);
+</script></body></html>

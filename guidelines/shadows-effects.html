@@ -1,0 +1,31 @@
+<!-- @dsCard group="Guidelines" name="Sombras, glass y movimiento" viewport="960x600" -->
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Sombras y efectos · EnviosDosRuedas</title><link rel="stylesheet" href="../styles.css"></head>
+<body class="bg-brand-white-50 text-brand-ink font-sans p-8">
+<h1 class="font-display uppercase leading-[0.9] text-4xl text-brand-ink mb-2">Sombras, glass y movimiento</h1>
+<p class="text-sm text-brand-blue-600 mb-6">Utilidades <code class="font-mono">shadow-*</code>, glassmorphism y las animaciones <code class="font-mono">animate-*</code> propias del sitio.</p>
+
+<div class="grid gap-6 mb-8" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+  <div class="rounded-2xl bg-white p-6 shadow-minimal"><p class="font-subheading uppercase tracking-widest text-xs text-brand-blue-500">shadow-minimal</p><p class="text-xs text-brand-blue-600 mt-2">Tarjetas planas sobre fondo claro</p></div>
+  <div class="rounded-2xl bg-white p-6 shadow-float"><p class="font-subheading uppercase tracking-widest text-xs text-brand-blue-500">shadow-float</p><p class="text-xs text-brand-blue-600 mt-2">Elementos flotantes, dropdowns</p></div>
+  <div class="rounded-2xl bg-brand-blue-700 p-6 shadow-antigravity-deep text-white"><p class="font-subheading uppercase tracking-widest text-xs text-brand-yellow-500">shadow-antigravity-deep</p><p class="text-xs text-brand-blue-200 mt-2">Tarjetas hero, mapa de cobertura</p></div>
+  <div class="rounded-2xl bg-brand-yellow-500 p-6 shadow-cta-glow text-brand-ink"><p class="font-subheading uppercase tracking-widest text-xs">shadow-cta-glow</p><p class="text-xs mt-2">CTA amarillo · glow neón</p></div>
+</div>
+
+<div class="rounded-3xl p-6 mb-8 relative overflow-hidden" style="background:linear-gradient(135deg,#00277C 0%,#0636A5 60%,#0742CA 100%)">
+  <div class="flex gap-6 items-center">
+    <div class="backdrop-blur-md bg-brand-ink/60 border border-white/20 rounded-2xl p-4 text-white flex-1">
+      <p class="font-subheading uppercase tracking-widest text-xs text-brand-yellow-500">Glass</p>
+      <p class="font-mono text-xs text-brand-blue-200 mt-2">backdrop-blur-md bg-brand-ink/60 border border-white/20</p>
+    </div>
+    <div class="flex items-center gap-2 bg-brand-ink/60 border border-white/15 px-3.5 py-1.5 rounded-full">
+      <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-yellow-500 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-yellow-500"></span></span>
+      <span class="font-subheading text-xs uppercase tracking-widest text-brand-yellow-500 font-bold">animate-ping</span>
+    </div>
+    <div class="animate-float-slow rounded-2xl bg-white/10 border border-white/10 px-4 py-3 text-white font-mono text-xs">animate-float-slow</div>
+    <div class="animate-pulse-subtle rounded-2xl bg-brand-yellow-500/20 border border-brand-yellow-500/30 px-4 py-3 text-brand-yellow-500 font-mono text-xs">animate-pulse-subtle</div>
+  </div>
+</div>
+
+<p class="font-mono text-xs text-brand-blue-600">Transiciones: <span class="text-brand-ink">transition-all duration-300</span> · hover <span class="text-brand-ink">hover:-translate-y-1</span>, <span class="text-brand-ink">group-hover:translate-x-1</span> · press <span class="text-brand-ink">active:scale-[.98]</span> · también animate-shimmer, animate-border-pulse</p>
+</body></html>

@@ -1,0 +1,46 @@
+<!-- @dsCard group="Guidelines" name="Patrones: CTA, badge, double-bezel" viewport="960x720" -->
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Patrones · EnviosDosRuedas</title><link rel="stylesheet" href="../styles.css"></head>
+<body class="font-sans text-white relative overflow-hidden" style="background:linear-gradient(135deg,#00277C 0%,#0636A5 60%,#0742CA 100%);min-height:720px">
+<svg class="absolute inset-0 w-full h-full opacity-[0.07]" aria-hidden="true">
+  <pattern id="hero-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+    <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-dasharray="2,6"/>
+    <circle cx="0" cy="0" r="1.5" fill="#FFEC01"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#hero-grid)"/>
+</svg>
+<div class="relative p-8">
+  <div class="inline-flex items-center gap-2 bg-brand-ink/60 border border-white/15 px-3.5 py-1.5 rounded-full mb-6">
+    <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-yellow-500 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-yellow-500"></span></span>
+    <span class="font-subheading text-xs uppercase tracking-widest text-brand-yellow-500 font-bold">Ruteo activo · MDQ</span>
+  </div>
+
+  <h1 class="font-display uppercase leading-[0.9] text-6xl mb-2">Tu envío,<br><span class="text-brand-yellow-500">hoy mismo.</span></h1>
+  <p class="text-lg text-brand-blue-200 max-w-xl mb-6">Mensajería en moto para comercios de Mar del Plata. Retiro en el día, seguimiento y cero extravíos.</p>
+
+  <div class="flex gap-4 mb-8">
+    <a href="#" class="group inline-flex items-center justify-between gap-3 rounded-full font-subheading uppercase tracking-[.05em] font-bold border px-8 py-3 min-h-[52px] bg-brand-yellow-500 text-brand-ink border-brand-yellow-500 shadow-cta-glow hover:bg-brand-yellow-400 hover:shadow-[0_0_50px_rgba(255,236,1,0.5)] active:scale-[.98] transition-all duration-300">
+      <span class="truncate">Cotizá Express</span>
+      <span class="w-8 h-8 rounded-full flex items-center justify-center bg-brand-blue-700/10 text-brand-ink group-hover:bg-brand-blue-700 group-hover:text-brand-yellow-500 group-hover:translate-x-1 transition-all duration-200"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a href="#" class="inline-flex items-center gap-3 rounded-full font-subheading uppercase tracking-[.05em] font-bold border border-white/20 bg-white/10 hover:bg-white/20 text-white px-8 py-3 min-h-[52px] transition-all duration-300">Ver servicios</a>
+  </div>
+
+  <div class="grid grid-cols-2 gap-6">
+    <div class="double-bezel-outer bg-brand-ink/60 backdrop-blur-md border border-white/20 p-3 sm:p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+      <div class="double-bezel-inner relative rounded-2xl overflow-hidden border border-white/10 p-4 sm:p-6 flex flex-col" style="background:linear-gradient(to bottom,rgba(6,54,165,.85),rgba(0,39,124,.95))">
+        <p class="font-subheading uppercase tracking-widest text-xs text-brand-yellow-500 mb-2">Double-Bezel Card</p>
+        <p class="font-display uppercase leading-[0.9] text-3xl mb-2">Envíos Express</p>
+        <p class="text-sm text-brand-blue-200 mb-4">Retiro y entrega en menos de 2 horas dentro del ejido urbano.</p>
+        <p class="font-mono text-2xl font-bold text-brand-yellow-500">$8.200 <span class="font-subheading text-xs uppercase tracking-widest text-brand-blue-200">0–3 km</span></p>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-4"><p class="font-mono text-3xl font-bold text-brand-yellow-500">+50K</p><p class="font-subheading uppercase tracking-widest text-xs text-brand-blue-200 mt-1">Envíos</p></div>
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-4"><p class="font-mono text-3xl font-bold text-brand-yellow-500">0</p><p class="font-subheading uppercase tracking-widest text-xs text-brand-blue-200 mt-1">Extraviados</p></div>
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-4"><p class="font-mono text-3xl font-bold text-brand-yellow-500">+100</p><p class="font-subheading uppercase tracking-widest text-xs text-brand-blue-200 mt-1">Comercios</p></div>
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-4"><p class="font-mono text-3xl font-bold text-brand-yellow-500">2h</p><p class="font-subheading uppercase tracking-widest text-xs text-brand-blue-200 mt-1">Express</p></div>
+    </div>
+  </div>
+</div>
+</body></html>

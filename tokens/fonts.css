@@ -1,0 +1,7 @@
+/* Font variables the site sets through Next.js font classes on <html>. Pinned on :root (unlayered) - designs need no wrapper class to get the brand fonts. */
+:root{
+  --font-sans:"Outfit", "Outfit Fallback"; /* @kind font */
+  --font-display:"Anton", "Anton Fallback"; /* @kind font */
+  --font-subheading:"Bebas Neue", "Bebas Neue Fallback"; /* @kind font */
+  --font-mono:"Geist Mono", "Geist Mono Fallback"; /* @kind font */
+}
